@@ -1,6 +1,6 @@
-package tekwill.course.pack2;
+package tekwill.homeworks.h2.pack2;
 
-import tekwill.course.pack1.FirstClass;
+import tekwill.homeworks.h2.pack1.FirstClass;
 
 public class SecondClass {
 
@@ -11,7 +11,7 @@ public class SecondClass {
         FirstClass firstClass = new FirstClass();
         firstClass.printNames1();
 
-        System.out.printf("Class2 Name: %s\nMethode2 Name: %s",
+        System.out.printf("%nClass2 Name: %s%nMethode2 Name: %s%n",
                 this.className, "printNames2");
     }
 }
