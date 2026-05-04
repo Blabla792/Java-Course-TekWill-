@@ -1,18 +1,16 @@
 package homework4.task7;
 
-import java.util.Scanner;
+import utils.InputHelper;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.print("Enter an year: ");
-        Scanner input = new Scanner(System.in);
-        int year = input.nextInt();
+        int year = InputHelper.getInt("Enter an year: ", true);
 
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println("Leap year");
-        } else  {
+        } else {
             System.out.println("Not a leap year");
         }
     }

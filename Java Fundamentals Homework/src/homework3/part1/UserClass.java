@@ -1,21 +1,15 @@
 package homework3.part1;
 
-import java.util.Scanner;
+import utils.InputHelper;
 
 public class UserClass {
 
-    public String input() {
+    public String getUserInfo() {
 
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("Enter your name: ");
-        String name = input.nextLine();
-
-        System.out.println("Enter your age: ");
-        int age = Integer.parseInt(input.nextLine());
-
-        System.out.println("Enter your city: ");
-        String city = input.nextLine();
+        String name = InputHelper.getString("Enter name: ");
+        // Call the advanced getInt method for checking if the value is greater than 0.
+        int age = InputHelper.getInt("Enter age: ",  true);
+        String city = InputHelper.getString("Enter city: ");
 
         System.out.println("-".repeat(50));
 

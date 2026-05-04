@@ -1,14 +1,13 @@
 package homework5.task4;
 
-import java.util.Scanner;
+import utils.InputHelper;
 
 public class Main {
 
     public static void main(String[] args) {
 
         System.out.println("Enter temperature: ");
-        Scanner scanner = new Scanner(System.in);
-        double temperature = scanner.nextFloat();
+        double temperature = InputHelper.getDouble("Enter temperature: ");
 
         double maxTemp = 100;
         double minTemp = 0;
@@ -20,7 +19,5 @@ public class Main {
         } else {
             System.out.println("Porridge is just right.");
         }
-
-        scanner.close();
     }
 }

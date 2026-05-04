@@ -1,23 +1,20 @@
 package homework3.part2;
 
-import java.util.Scanner;
+import utils.InputHelper;
 
 public class AgeFuture {
 
     public String futureAge() {
 
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("Enter your age: ");
-        int currentAge = Integer.parseInt(input.nextLine());
-
-        System.out.println("Enter number of years: ");
-        int futureYear = Integer.parseInt(input.nextLine());
-
-        int futureAge = currentAge + futureYear;
+        // Call the advanced getInt method for checking if the value is greater than 0.
+        int currentAge = InputHelper.getInt("Please enter your age: ",
+                true);
+        int futureYear = InputHelper.getInt("Enter number of years: ",
+                true);
+        int yearsToAdd = currentAge + futureYear;
 
         System.out.println("-".repeat(50));
 
-        return String.format("In %d years you will be %d years old", futureYear, futureAge);
+        return String.format("In %d years you will be %d years old", futureYear, yearsToAdd);
     }
 }
