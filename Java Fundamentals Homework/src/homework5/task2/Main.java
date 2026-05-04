@@ -1,29 +1,25 @@
 package homework5.task2;
 
-import java.util.Scanner;
+import utils.InputHelper;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Enter your age: ");
-        Scanner scanner = new Scanner(System.in);
-        int age = Integer.parseInt(scanner.nextLine());
+        int age = InputHelper.getInt("Enter your age: ", true);
+        // Restricts valid input to "yes" or "no".
+        String maritalStatus = InputHelper.getString("Enter your marital status: ",
+                true);
 
-        System.out.println("Enter your marital status: ");
-        String maritalStatus = scanner.nextLine().toLowerCase();
-
-        String result = (age < 18) && (maritalStatus.equals("no")) ?
+        String result = (age < 18) && (maritalStatus.equalsIgnoreCase("no")) ?
                 "You are not eligible for discounts" : (age < 18) &&
-                                                       (maritalStatus.equals("yes")) ?
+                                                       (maritalStatus.equalsIgnoreCase("yes")) ?
                 "You are eligible for discounts" : (age >= 18) &&
-                                                   (maritalStatus.equals("no")) ?
+                                                   (maritalStatus.equalsIgnoreCase("no")) ?
                 "You are not eligible for discounts" : (age > 18) &&
-                                                       (maritalStatus.equals("yes")) ?
+                                                       (maritalStatus.equalsIgnoreCase("yes")) ?
                 "You are eligible for discounts" : "Invalid Data";
 
         System.out.println(result);
-
-        scanner.close();
     }
 }

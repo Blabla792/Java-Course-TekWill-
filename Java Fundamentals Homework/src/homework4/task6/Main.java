@@ -1,14 +1,12 @@
 package homework4.task6;
 
-import java.util.Scanner;
+import utils.InputHelper;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.print("What is your age? ");
-        Scanner sc = new Scanner(System.in);
-        int age = sc.nextInt();
+        int age = InputHelper.getInt("Enter your age: ", true);
 
         if (age < 12) {
             System.out.println("Ticket price: $5");

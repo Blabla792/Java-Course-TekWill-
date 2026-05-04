@@ -1,21 +1,20 @@
 package homework4.task2;
 
-import java.util.Scanner;
+import utils.InputHelper;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.print("Enter width of rectangle 1: ");
-        Scanner sc = new Scanner(System.in);
-        double width1 = sc.nextDouble();
-        System.out.print("Enter height of rectangle 1: ");
-        double height1 = sc.nextDouble();
+        double width1 = InputHelper.getDouble("Enter width of rectangle 1: ",
+                true);
+        double height1 = InputHelper.getDouble("Enter height of rectangle 1: ",
+                true);
 
-        System.out.print("Enter width of rectangle 2: ");
-        double width2 = sc.nextDouble();
-        System.out.print("Enter height of rectangle 2: ");
-        double height2 = sc.nextDouble();
+        double width2 = InputHelper.getDouble("Enter width of rectangle 2: ",
+                true);
+        double height2 = InputHelper.getDouble("Enter height of rectangle 2: ",
+                true);
 
         double area1 = width1 * height1;
         double area2 = width2 * height2;

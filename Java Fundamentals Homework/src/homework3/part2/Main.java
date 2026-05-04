@@ -4,34 +4,34 @@ public class Main {
 
     public static void main(String[] args) {
         // 1. Salary Calculator
-        styleMethod();
+        printSeparator();
         System.out.println("Salary Calculator");
-        styleMethod();
+        printSeparator();
 
         SalaryCalculator calculator = new SalaryCalculator();
-        System.out.println(calculator.totalSalary());
+        System.out.println(calculator.calculateSalary());
         System.out.println("#".repeat(50) + "\n");
 
         // 2. Age in the Future
-        styleMethod();
+        printSeparator();
         System.out.println("Age in the Future");
-        styleMethod();
+        printSeparator();
 
         AgeFuture ageFuture = new AgeFuture();
         System.out.println(ageFuture.futureAge());
         System.out.println("#".repeat(50) + "\n");
 
         // 3. Mini Profile Generator
-        styleMethod();
+        printSeparator();
         System.out.println("Mini Profile Generator");
-        styleMethod();
+        printSeparator();
 
         ProfileGenerator profileGenerator = new ProfileGenerator();
         System.out.println(profileGenerator.miniProfile());
         System.out.println("#".repeat(50) + "\n");
     }
 
-    public static void styleMethod() {
+    public static void printSeparator() {
         System.out.println("-".repeat(50));
     }
 }

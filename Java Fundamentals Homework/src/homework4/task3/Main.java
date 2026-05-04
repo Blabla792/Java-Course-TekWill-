@@ -1,14 +1,12 @@
 package homework4.task3;
 
-import java.util.Scanner;
+import utils.InputHelper;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.print("Enter number: ");
-        Scanner scanner = new Scanner(System.in);
-        double number = scanner.nextDouble();
+        double number = InputHelper.getDouble("Enter number: ");
 
         if (number == 0) {
             System.out.println("zero");

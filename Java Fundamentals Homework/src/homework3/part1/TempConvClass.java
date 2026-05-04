@@ -1,17 +1,17 @@
 package homework3.part1;
 
-import java.util.Scanner;
+import utils.InputHelper;
 
 public class TempConvClass {
 
-    public String convTempCalcs() {
+    private static final double CELSIUS_TO_FAHRENHEIT_MULTIPLIER = 1.8;
+    private static final int CELSIUS_TO_FAHRENHEIT_OFFSET = 32;
 
-        Scanner input = new Scanner(System.in);
+    public String convertCelsiusToFahrenheit() {
 
-        System.out.print("Enter a temperature in Celsius: ");
-        double temp = input.nextDouble();
-
-        double convertedTemp = temp * 1.8 + 32;
+        double temp = InputHelper.getDouble("Enter a temperature in Celsius: ");
+        double convertedTemp = temp * CELSIUS_TO_FAHRENHEIT_MULTIPLIER +
+                CELSIUS_TO_FAHRENHEIT_OFFSET;
 
         System.out.println("-".repeat(50));
 

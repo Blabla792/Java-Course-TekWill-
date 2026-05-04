@@ -1,6 +1,6 @@
 package homework5.task6;
 
-import homework5.task6.utils.InputHelper;
+import utils.InputHelper;
 
 public class Main {
 
@@ -9,39 +9,22 @@ public class Main {
         calculateAndPrintConversion();
     }
 
-    public static double getNumbers () {
-
-        double number = 0;
-        boolean flag = false;
-        while (!flag) {
-            try {
-                number = Double.parseDouble(InputHelper.scanner.nextLine());
-                flag = true;
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid value, needs to be a number");
-            }
-        }
-
-        return number;
-    }
-
     public static void calculateAndPrintConversion () {
 
         boolean flag = false;
         while (!flag) {
 
-            System.out.println("Provide currency code (EUR, GBP, INR, AUD): ");
-            String currencyCode = InputHelper.scanner.nextLine().toUpperCase();
+            String currencyCode = InputHelper.getString("Provide currency code (EUR, GBP, INR, AUD): ");
 
             switch (currencyCode) {
                 case "EUR", "GBP", "INT", "AUD" -> {
 
-                    System.out.println("Enter USD value: ");
-                    double usdValue = getNumbers();
+                    double usdValue = InputHelper.getDouble("Enter USD value: ", true);
 
                     System.out.printf("Enter %s conversion rate: ", currencyCode);
+                    double conversionRate = InputHelper.getDouble("", true);
 
-                    double result = usdValue * getNumbers();
+                    double result = usdValue * conversionRate;
 
                     System.out.printf("Converted value from USD to %s is: %.2f %s\n", currencyCode, result,
                             currencyCode);
@@ -50,8 +33,5 @@ public class Main {
                 default -> System.out.println("Unsupported currency.");
             }
         }
-
-
-
     }
 }

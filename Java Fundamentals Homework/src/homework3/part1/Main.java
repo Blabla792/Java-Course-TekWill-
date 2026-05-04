@@ -4,34 +4,34 @@ public class Main {
 
     public static void main(String[] args) {
         // 1. Personal Information Program
-        printStyle();
+        printSeparator();
         System.out.println("Personal Information Program");
-        printStyle();
+        printSeparator();
 
         UserClass user1 = new UserClass();
-        System.out.println(user1.input());
+        System.out.println(user1.getUserInfo());
         System.out.println("#".repeat(50) + "\n");
 
         // 2. Simple Calculator
-        printStyle();
+        printSeparator();
         System.out.println("Simple Calculator");
-        printStyle();
+        printSeparator();
 
         CalculatorClass calculator = new CalculatorClass();
-        System.out.println(calculator.calcs());
+        System.out.println(calculator.performCalculations());
         System.out.println("#".repeat(50) + "\n");
 
         // 3. Temperature Converter
-        printStyle();
+        printSeparator();
         System.out.println("Temperature Converter");
-        printStyle();
+        printSeparator();
 
         TempConvClass tempConv = new TempConvClass();
-        System.out.println(tempConv.convTempCalcs());
+        System.out.println(tempConv.convertCelsiusToFahrenheit());
         System.out.println("#".repeat(50) + "\n");
     }
 
-    public static void printStyle() {
+    public static void printSeparator() {
         System.out.println("-".repeat(50));
     }
 }

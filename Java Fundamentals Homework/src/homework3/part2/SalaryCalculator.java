@@ -1,23 +1,18 @@
 package homework3.part2;
 
-import java.util.Scanner;
+import utils.InputHelper;
 
 public class SalaryCalculator {
 
-    public String totalSalary() {
+    public String calculateSalary() {
 
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("Enter your name: ");
-        String name = input.nextLine();
-
-        System.out.println("Enter your hourly rate: ");
-        double hourlyRate = Double.parseDouble(input.nextLine());
-
-        System.out.println("Enter your hours worked: ");
-        double hoursWorked = Double.parseDouble(input.nextLine());
-
-        Double salary = hoursWorked * hourlyRate;
+        String name = InputHelper.getString("Enter your name: ");
+        // Call the advanced getDouble method for checking if the value is greater than 0.
+        double hourlyRate = InputHelper.getDouble("Enter your hourly rate: ",
+                true);
+        double hoursWorked = InputHelper.getDouble("Enter your hours worked: ",
+                true);
+        double salary = hoursWorked * hourlyRate;
 
         System.out.println("-".repeat(50));
 

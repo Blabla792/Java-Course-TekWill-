@@ -1,20 +1,18 @@
 package homework3.part1;
 
-import java.util.Scanner;
+import utils.InputHelper;
 
 public class CalculatorClass {
 
-    public String calcs() {
+    public String performCalculations() {
 
-        Scanner input = new Scanner(System.in);
+        int number1 = InputHelper.getInt("Enter first number: ");
 
-        System.out.println("Enter first number: ");
-        int number1 = Integer.parseInt(input.nextLine());
-
-        System.out.println("Enter second number: ");
-        int number2 = Integer.parseInt(input.nextLine());
+        // Call the advanced getInt method for checking if the value is greater than 0.
+        int number2 = InputHelper.getInt("Enter second number: ", true);
 
         int sum = number1 + number2;
+        // Calculate absolute difference.
         int difference = Math.abs(number1 - number2);
         int multiplication = number1 * number2;
         double division = (double) number1 / number2;
