@@ -11,8 +11,7 @@ public class Main {
 
         int[] array = InputHelper.getIntArray("Enter a list of integers," +
                 "separated by commas: ", ",");
-
-        int[] sortedArray = new int[array.length];
+        
         boolean flag = true;
         int temp;
 
