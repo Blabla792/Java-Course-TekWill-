@@ -2,8 +2,8 @@ package homework9.task1;
 
 public class ParkingCharges {
 
-    private String licensePlate;
-    private double hoursParked;
+    private final String licensePlate;
+    private final double hoursParked;
     private double totalParkingFee;
 
     private static double totalCollectedFees = 0.0;

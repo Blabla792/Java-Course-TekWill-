@@ -101,8 +101,7 @@ public class RestaurantMenu {
         int totalItemCount = 0;
         boolean isempty = true;
 
-        for (int i = 0; i < basketMenu.length; i++) {
-            Item item = basketMenu[i];
+        for (Item item : basketMenu) {
             if (item != null) {
                 isempty = false;
                 double subtotal = item.calculateSubtotal();
