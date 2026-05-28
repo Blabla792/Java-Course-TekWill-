@@ -11,9 +11,5 @@ public class Main {
 
         PartTimeEmployee employee2 = new PartTimeEmployee("Bob", 30, 56);
         System.out.println(employee2.getEmployeeReport());
-
-
-
-
     }
 }
