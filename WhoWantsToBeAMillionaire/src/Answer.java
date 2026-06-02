@@ -1,3 +1,3 @@
-public record Answer(String[] answers, char correctAnswer) {
+public record Answer(String[] options, char correctAnswer) {
 
 }
