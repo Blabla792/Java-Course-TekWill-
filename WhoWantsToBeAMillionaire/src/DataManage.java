@@ -1,7 +1,6 @@
-import java.util.Random;
+import utils.GlobalUtils;
 
 public class DataManage {
-    private final Random random = new Random();
     private Question[] gameQuestions;
 
     private static final int GAME_TOTAL_QUESTIONS = 15;
@@ -138,7 +137,7 @@ public class DataManage {
             }
 
             for (int i = 0; i < levelPool.length; i++) {
-                int randomIndex = random.nextInt(levelPool.length);
+                int randomIndex = GlobalUtils.RANDOM.nextInt(levelPool.length);
 
                 Question temp = levelPool[i];
                 levelPool[i] = levelPool[randomIndex];

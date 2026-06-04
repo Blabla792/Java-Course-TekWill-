@@ -1,7 +1,6 @@
-import java.util.Random;
+import utils.GlobalUtils;
 
 public class FiftyFiftyLifeline {
-    private final Random random = new Random();
     private boolean isUsed = false;
 
     public boolean hasBeenUsed() {
@@ -9,7 +8,7 @@ public class FiftyFiftyLifeline {
     }
 
     public void markAsUsed() {
-        this.isUsed = true;
+        isUsed = true;
     }
 
     public String[] getFiftyFiftyAnswers(Answer currectAnswer) {
@@ -20,7 +19,7 @@ public class FiftyFiftyLifeline {
 
         int randomIncorrectIndex;
         do {
-            randomIncorrectIndex = random.nextInt(questionAnswers.length);
+            randomIncorrectIndex = GlobalUtils.RANDOM.nextInt(questionAnswers.length);
         } while (randomIncorrectIndex == correctIndex);
 
         String[] result = new String[questionAnswers.length];

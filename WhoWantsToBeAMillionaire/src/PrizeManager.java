@@ -5,11 +5,11 @@ public class PrizeManager {
             64_000, 125_000, 250_000, 500_000, 1_000_000
     };
 
-    private int currectWinnings;
+    private int currentWinnings;
     private int guaranteedWinnings;
 
     public PrizeManager() {
-        currectWinnings = 0;
+        currentWinnings = 0;
         guaranteedWinnings = 0;
     }
 
@@ -18,10 +18,10 @@ public class PrizeManager {
     }
 
     public void recordCorrectAnswer(int questionNumber) {
-        currectWinnings = getQuestionValue(questionNumber);
+        currentWinnings = getQuestionValue(questionNumber);
 
         if (questionNumber == 5 || questionNumber == 10) {
-            guaranteedWinnings = currectWinnings;
+            guaranteedWinnings = currentWinnings;
         }
     }
 
