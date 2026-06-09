@@ -1,22 +1,12 @@
 import utils.GlobalUtils;
 
-public class PhoneAFriend {
+public class PhoneAFriend extends Lifeline {
     private static final int CONFIDENCE_THRESHOLD = 80;
 
     private final int confidence;
-    private boolean isUsed;
 
     public PhoneAFriend() {
         this.confidence = GlobalUtils.RANDOM.nextInt(100);
-        this.isUsed = false;
-    }
-
-    public boolean hasBeenUsed() {
-        return isUsed;
-    }
-
-    public void markAsUsed() {
-        isUsed = true;
     }
 
     public boolean isConfident() {

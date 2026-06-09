@@ -1,15 +1,6 @@
 import utils.GlobalUtils;
 
-public class FiftyFiftyLifeline {
-    private boolean isUsed = false;
-
-    public boolean hasBeenUsed() {
-        return isUsed;
-    }
-
-    public void markAsUsed() {
-        isUsed = true;
-    }
+public class FiftyFiftyLifeline extends Lifeline {
 
     public String[] getFiftyFiftyAnswers(Answer currectAnswer) {
         String[] questionAnswers = currectAnswer.options();
