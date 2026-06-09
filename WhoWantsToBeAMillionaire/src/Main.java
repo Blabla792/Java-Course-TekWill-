@@ -6,6 +6,7 @@ public class Main {
         FiftyFiftyLifeline fiftyFifty =  new FiftyFiftyLifeline();
         PrizeManager prizeManager = new PrizeManager();
         PhoneAFriend phoneAFriend = new PhoneAFriend();
+        AskTheAudience askTheAudience = new AskTheAudience();
 
         displayQuestion(data.getGameQuestions()[14], prizeManager);
 
@@ -13,6 +14,8 @@ public class Main {
         displayFiftyFiftyLifeline(f);
 
         displayPhoneAFriend(data.getGameQuestions()[2], phoneAFriend, prizeManager);
+
+        displayAskTheAudience(data.getGameQuestions()[2], askTheAudience);
     }
 
     public static void displayQuestion(Question question, PrizeManager prizeManager) {
@@ -81,6 +84,36 @@ public class Main {
             System.out.println("Friend: Oh, I'm pretty sure I know this one. The answer is " + suggestedLetter + ": " + answerText);
         } else {
             System.out.println("Friend: Wow, that's tough. If I had to guess, I'd say " + suggestedLetter + ": " + answerText);
+        }
+    }
+
+    public static void displayAskTheAudience(Question question, AskTheAudience askTheAudience) {
+        Answer answer = question.getAnswers();
+        String[] options = answer.options();
+
+        int[] votePercentages = askTheAudience.getAskTheAudience(answer);
+
+        System.out.println("--- Ask the Audience Used ---");
+
+        System.out.print("Host: Audience, pick up your keypads! Vote for ");
+        for (int i = 0; i < options.length; i++) {
+            char letter = (char) ('A' + i);
+            System.out.print(letter + ": " + options[i]);
+
+            if (i < options.length - 2) {
+                System.out.print(", ");
+            } else if (i == options.length - 2) {
+                System.out.print(", or ");
+            }
+        }
+
+        System.out.println("\n...");
+        System.out.println("Host: The results are in. Here is what the audience thinks:");
+
+        for (int i = 0; i < options.length; i++) {
+            char letter = (char) ('A' + i);
+
+            System.out.printf("%c: %d%% - %s%n", letter, votePercentages[i], options[i]);
         }
     }
 }
