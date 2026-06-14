@@ -118,7 +118,7 @@ public class TriviaGame {
         System.out.println("--- Phone a Friend Used ---");
         System.out.println("Ringing your friend...");
         System.out.println("Friend: Hello?");
-        System.out.println("You: I need your help with a question for $" + questionValue + "!");
+        System.out.printf("You: I need your help with a question for $%,d!\n", questionValue);
         System.out.println("You: The question is: " + questionText);
 
         System.out.println("You: The options are: ");
@@ -235,7 +235,7 @@ public class TriviaGame {
         } else if (numberOfQuestions <= 10) {
             System.out.printf("""
                     You took a brave guess, but unfortunately, that is the wrong answer. It was actually %c: %s.
-                    But it's not all bad news! You crossed our first milestone, which means you are not leaving empty-handed. \
+                    But it's not all bad news! You crossed our first milestone, which means you are not leaving empty-handed.
                     Congratulations, you are going home with $%d!
                     """, correctAnswerLetter, correctAnswerText, safeHavensMoney);
         } else {
