@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml" fx:controller="game.controller.GameController">
+
+    <stylesheets>
+        <URL value="@/css/styles.css"/>
+    </stylesheets>
+
+    <!-- TOP SECTION: Status Bar for Lifelines and Current Prize -->
+    <top>
+        <HBox alignment="CENTER">
+            <padding>
+                <Insets top="30" right="40" bottom="10" left="40"/>
+            </padding>
+
+            <!-- Left Side: Lifelines Group -->
+            <HBox spacing="15">
+                <Button fx:id="btn5050" text="50 : 50" onAction="#handle5050" styleClass="lifeline-button"/>
+                <Button fx:id="btnPhone" text="📞 Phone" onAction="#handlePhoneFriend" styleClass="lifeline-button"/>
+                <Button fx:id="btnAudience" text="👥 Audience" onAction="#handleAskAudience" styleClass="lifeline-button"/>
+            </HBox>
+
+            <!-- Center: A 'Region' that acts as a spring to push the elements apart -->
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Right Side: Prize Tracker -->
+            <Label fx:id="prizeLabel" text="Prize: $0" />
+        </HBox>
+    </top>
+
+    <!-- CENTER SECTION: Main Game Board -->
+    <center>
+        <VBox alignment="CENTER" spacing="50">
+            <!-- Pushes the questions down slightly and adds side margins -->
+            <padding>
+                <Insets top="10" right="40" bottom="60" left="40"/>
+            </padding>
+
+            <!-- The Big Question Box -->
+            <Label fx:id="questionLabel" text="Question goes here" wrapText="true"/>
+
+            <!-- The Answer Grid -->
+            <!-- Increased hgap and vgap to make the buttons feel heavier and distinctly separated -->
+            <GridPane alignment="CENTER" hgap="40" vgap="25">
+                <Button fx:id="btnA" text="A: " onAction="#handleAnswerA" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Button fx:id="btnB" text="B: " onAction="#handleAnswerB" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Button fx:id="btnC" text="C: " onAction="#handleAnswerC" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Button fx:id="btnD" text="D: " onAction="#handleAnswerD" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            </GridPane>
+        </VBox>
+    </center>
+
+    <!-- BOTTOM SECTION: In-Game Studio Monitor for Lifelines -->
+    <bottom>
+        <VBox alignment="CENTER">
+            <padding>
+                <Insets top="10" bottom="30"/>
+            </padding>
+            <Label fx:id="messageLabel" text="" visible="false" styleClass="studio-monitor" textAlignment="CENTER" wrapText="true"/>
+
+            <!-- PLAY AGAIN BUTTON -->
+            <Button fx:id="btnPlayAgain" text="Play Again" visible="false" onAction="#handlePlayAgain" styleClass="lifeline-button">
+                <VBox.margin>
+                    <Insets top="20"/>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </bottom>
+</BorderPane>

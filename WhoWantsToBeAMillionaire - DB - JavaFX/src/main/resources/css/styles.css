@@ -1,0 +1,97 @@
+/* --- Main Background --- */
+.root {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 80%, #1c1c5c, #000000);
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* --- Global Label Styles --- */
+.label {
+    -fx-text-fill: white;
+}
+
+/* --- Prize Tracker --- */
+#prizeLabel {
+    -fx-text-fill: #ffd700;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255,215,0,0.5), 10, 0, 0, 0);
+}
+
+/* --- The Question Box --- */
+#questionLabel {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-padding: 30px;
+    -fx-min-width: 700px;
+    -fx-max-width: 700px;
+    -fx-min-height: 120px;
+    -fx-background-color: linear-gradient(to bottom, #000033, #00001a);
+    -fx-border-color: #ffd700; /* Gold Border */
+    -fx-border-width: 2px;
+    -fx-border-radius: 30px;
+    -fx-background-radius: 30px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 10, 0, 0, 5);
+}
+
+/* --- Answer Buttons (A, B, C, D) --- */
+.button {
+    -fx-background-color: linear-gradient(to bottom, #00004d, #000026);
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 35px;
+    -fx-background-radius: 35px;
+    -fx-padding: 15px 20px;
+    -fx-cursor: hand;
+    -fx-min-width: 330px;
+    -fx-alignment: center-left; /* Aligns text like the real game */
+}
+
+/* Hover effect when the mouse goes over an answer */
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffaa00, #cc6600); /* Orange/Gold */
+    -fx-border-color: white;
+    -fx-text-fill: black;
+}
+
+/* Used lifelines or disabled buttons */
+.button:disabled {
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: #333333;
+    -fx-text-fill: #555555;
+    -fx-cursor: default;
+}
+
+/* --- Lifeline Specific Buttons --- */
+.lifeline-button {
+    -fx-min-width: 150px;
+    -fx-font-size: 14px;
+    -fx-alignment: center;
+    -fx-border-color: #00aaff; /* Blue accent for lifelines */
+    -fx-background-color: linear-gradient(to bottom, #001133, #000000);
+}
+
+.lifeline-button:hover {
+    -fx-background-color: #00aaff;
+    -fx-text-fill: black;
+}
+
+/* --- In-Game Studio Monitor --- */
+.studio-monitor {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00ffff; /* Cyan text */
+    -fx-background-color: rgba(0, 0, 50, 0.8);
+    -fx-border-color: #00ffff;
+    -fx-border-width: 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-padding: 15px 30px;
+    -fx-min-width: 700px;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0, 255, 255, 0.4), 10, 0, 0, 0);
+}
